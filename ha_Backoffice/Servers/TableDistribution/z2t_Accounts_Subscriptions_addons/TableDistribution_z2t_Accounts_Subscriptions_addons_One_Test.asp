@@ -223,6 +223,114 @@
             linkToError("ajax timeout", "Timed out with no response.")(document.querySelectorAll("#resultServer" + 9)[0].firstChild);
         }
 
+        var successFn10 = function(ignore, r, timer) 
+        {
+            clearTimeout(timer);
+            getUpdateResponse(ignore, r, 10);
+        };
+
+        var errorFn10 = function(r, ignore, timer) 
+		{
+            clearTimeout(timer);
+            errorfn(r, ignore, 10);
+        };
+
+        var timeoutFn10 = function(ignore, ignore2, timer) 
+        {
+            clearTimeout(timer);
+            linkToError("ajax timeout", "Timed out with no response.")(document.querySelectorAll("#resultServer" + 10)[0].firstChild);
+        }
+
+        var successFn11 = function(ignore, r, timer) 
+        {
+            clearTimeout(timer);
+            getUpdateResponse(ignore, r, 11);
+        };
+
+        var errorFn11 = function(r, ignore, timer) 
+		{
+            clearTimeout(timer);
+            errorfn(r, ignore, 11);
+        };
+
+        var timeoutFn11 = function(ignore, ignore2, timer) 
+        {
+            clearTimeout(timer);
+            linkToError("ajax timeout", "Timed out with no response.")(document.querySelectorAll("#resultServer" + 11)[0].firstChild);
+        }
+
+        var successFn12 = function(ignore, r, timer) 
+        {
+            clearTimeout(timer);
+            getUpdateResponse(ignore, r, 12);
+        };
+
+        var errorFn12 = function(r, ignore, timer) 
+		{
+            clearTimeout(timer);
+            errorfn(r, ignore, 12);
+        };
+
+        var timeoutFn12 = function(ignore, ignore2, timer) 
+        {
+            clearTimeout(timer);
+            linkToError("ajax timeout", "Timed out with no response.")(document.querySelectorAll("#resultServer" + 12)[0].firstChild);
+        }
+
+        var successFn13 = function(ignore, r, timer) 
+        {
+            clearTimeout(timer);
+            getUpdateResponse(ignore, r, 13);
+        };
+
+        var errorFn13 = function(r, ignore, timer) 
+		{
+            clearTimeout(timer);
+            errorfn(r, ignore, 13);
+        };
+
+        var timeoutFn13 = function(ignore, ignore2, timer) 
+        {
+            clearTimeout(timer);
+            linkToError("ajax timeout", "Timed out with no response.")(document.querySelectorAll("#resultServer" + 13)[0].firstChild);
+        }
+
+        var successFn14 = function(ignore, r, timer) 
+        {
+            clearTimeout(timer);
+            getUpdateResponse(ignore, r, 14);
+        };
+
+        var errorFn14 = function(r, ignore, timer) 
+		{
+            clearTimeout(timer);
+            errorfn(r, ignore, 14);
+        };
+
+        var timeoutFn14 = function(ignore, ignore2, timer) 
+        {
+            clearTimeout(timer);
+            linkToError("ajax timeout", "Timed out with no response.")(document.querySelectorAll("#resultServer" + 14)[0].firstChild);
+        }
+
+        var successFn15 = function(ignore, r, timer) 
+        {
+            clearTimeout(timer);
+            getUpdateResponse(ignore, r, 15);
+        };
+
+        var errorFn15 = function(r, ignore, timer) 
+		{
+            clearTimeout(timer);
+            errorfn(r, ignore, 15);
+        };
+
+        var timeoutFn15 = function(ignore, ignore2, timer) 
+        {
+            clearTimeout(timer);
+            linkToError("ajax timeout", "Timed out with no response.")(document.querySelectorAll("#resultServer" + 15)[0].firstChild);
+        }
+
         http[1] = xhr(getURL(1), successFn1, errorFn1, 15000, timeoutFn1);
         errorFn1.timer = http.timer;
         successFn1 = http.timer;
@@ -272,6 +380,36 @@
         errorFn9.timer = http.timer;
         successFn9 = http.timer;
         http[9].get();
+
+        http[10] = xhr(getURL(10), successFn10, errorFn10, 15000, timeoutFn10);
+        errorFn10.timer = http.timer;
+        successFn10 = http.timer;
+        http[10].get();
+
+        http[11] = xhr(getURL(11), successFn11, errorFn11, 15000, timeoutFn11);
+        errorFn11.timer = http.timer;
+        successFn11 = http.timer;
+        http[11].get();
+
+		http[12] = xhr(getURL(12), successFn12, errorFn12, 15000, timeoutFn12);
+        errorFn12.timer = http.timer;
+        successFn12 = http.timer;
+        http[12].get();
+
+        http[13] = xhr(getURL(13), successFn13, errorFn13, 15000, timeoutFn13);
+        errorFn13.timer = http.timer;
+        successFn13 = http.timer;
+        http[13].get();
+
+        http[14] = xhr(getURL(14), successFn14, errorFn14, 15000, timeoutFn14);
+        errorFn14.timer = http.timer;
+        successFn14 = http.timer;
+        http[14].get();
+
+        http[15] = xhr(getURL(15), successFn15, errorFn15, 15000, timeoutFn15);
+        errorFn15.timer = http.timer;
+        successFn15 = http.timer;
+        http[15].get();        
 	}
 
     function getUpdateResponse(ignore, r, id) 
