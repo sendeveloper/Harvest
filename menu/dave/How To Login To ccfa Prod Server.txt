@@ -1,0 +1,10 @@
+www.gotomypc.com
+Login as:
+Email: jzou@ccfa.org
+password: 386gotomypc
+Select the IRC Server under MY COMPUTERS
+Access Code : ircccfa01
+
+Server Login:
+Username: ircadmin
+Password: ircccfa

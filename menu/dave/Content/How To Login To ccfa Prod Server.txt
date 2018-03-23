@@ -1,0 +1,17 @@
+Email Ayesha Williams at AWilliams@ccfa.org 
+and she will contact her IT department to request a time 
+and they will schedule a Go To Meeting directly from the IRC call center database's server 
+and send you an invitation via e-mail. Follow the instructions on the invitation.
+
+Former method (prior to 2013) 
+*No Longer In Use*
+www.gotomypc.com
+Login as:
+Email: jzou@ccfa.org
+password: 386gotomypc
+Select the IRC Server under MY COMPUTERS
+Access Code : ircccfa01
+
+Server Login:
+Username: ircadmin
+Password: ircccfa

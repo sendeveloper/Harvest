@@ -1,0 +1,70 @@
+h1
+	{
+	font-family: Verdana, Arial, Helvetica, sans-serif;	
+	font-weight: bold; 
+	font-size: 24px; 
+	color: #000000;
+	text-align: center;
+	}
+
+h2
+	{
+	font-family: Verdana, Arial, Helvetica, sans-serif;	
+	font-weight: bold; 
+	font-size: 16px; 
+	color: #000000;
+	}
+
+body
+	{
+	font-family: Verdana, Arial, Helvetica, sans-serif;	
+	background-color: white;
+	}
+
+td
+	{
+	font-size: 8pt;
+	}
+
+th
+	{
+	font-size: 8pt;
+	}
+
+a.Inline
+	{
+	font-family: Verdana, Arial, Helvetica, sans-serif;	
+	font-size: 8pt;
+	color: #000000;
+	}
+
+a.Inline:hover
+	{
+	color: #C0C0C0;
+	text-decoration: none;
+	}
+
+
+a.button 
+	{
+	font-family: Verdana, Arial, Helvetica, sans-serif;	
+	font-weight: bold; 
+	font-size: 11px; 
+	padding: 4px 4px; 
+	border-top: 1px solid #E0E0E0;
+	border-right: 1px solid black; 
+	border-bottom: 1px solid black;
+	border-left: 1px solid #E0E0E0; 
+	background-color: #E0FF00; 
+	color: #000000;
+	text-align: center;
+	text-decoration: none;
+	}
+
+a.button:hover 
+	{
+	border-color: black white white black;
+	color: #CCCCCC;
+	}
+
+

@@ -1,0 +1,83 @@
+body
+	{
+	font-family: 		Verdana, Arial, Helvetica, sans-serif;	
+	margin:				0;
+	color:				black;
+	}
+
+body.gray_desktop
+	{
+	background-image: 	url('/ha_backoffice/images/texture.jpg');
+	}
+
+.MainBody
+	{
+	width:				1200px;
+	border: 			1px solid Black;
+	background-color: 	#FBFBFB;
+	margin-top:			20px;
+	}
+	
+table
+  {
+  empty-cells: show;
+  }
+
+td
+	{
+	color:				black;
+	font-size:			10px;
+	}
+	
+th
+	{
+	color:				black;
+	font-size:			10px;
+	font-weight:		bold;
+	}
+
+a.greenButton 
+	{
+	font-family: Verdana, Arial, Helvetica, sans-serif;	
+	font-weight: bold; 
+	font-size: 11px; 
+	padding: 4px 4px; 
+	border-top: 1px solid #E0E0E0;
+	border-right: 1px solid black; 
+	border-bottom: 1px solid black;
+	border-left: 1px solid #E0E0E0; 
+	background-color: #C8E181; 
+	color: #000000;
+	text-align: center;
+	text-decoration: none;
+	}
+
+a.greenButton:hover 
+	{
+	border-color: black white white black;
+	color: #888888;
+	}
+
+.ToolTip
+	{
+    /*margin:			100px;*/
+	}	
+	
+.ToolTip:hover .ToolTipBox 
+	{
+    display: 		block;
+	}
+
+.ToolTipBox
+	{
+    display: 		none;
+    background: 	#B2E5FF;
+	margin-top:		10px;
+    margin-left: 	50px;
+    padding: 		10px;
+    position: 		absolute;
+    z-index: 		1000;
+	border:			1px solid black;
+    /*width: 			200px;*/
+    /*height: 		100px;*/
+	}

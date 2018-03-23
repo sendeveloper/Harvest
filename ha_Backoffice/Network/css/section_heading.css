@@ -1,0 +1,30 @@
+span.subHead {
+    font-weight: bold;
+    color: #336600;
+}
+
+span.newStyleHeading {
+    font-size: 11pt;
+    font-weight: bold;
+    color: #336600;
+}
+
+table.boarderedtable {
+    border: 1px solid black;
+    width: 100%;
+}
+
+th.boarderedtable {
+    padding: 15px;
+    border: 1px solid black;
+}
+
+tr.boarderedtable {
+    padding: 20px;
+    border: 1px solid black;
+}
+
+td.boarderedtable {
+    padding: 10px;
+    border: 1px solid black;
+}

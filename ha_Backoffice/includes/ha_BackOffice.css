@@ -1,0 +1,270 @@
+@viewport{
+    zoom: 1.0;
+    width: extend-to-zoom;
+}
+
+body
+	{
+	font-family:     Verdana, Arial, Helvetica, sans-serif;
+	margin:          0;
+	color:           black;
+	}
+
+body.gray_desktop
+	{
+	background-image: url('http://www.HarvestAmerican.info/ha_backoffice/images/texture.jpg');
+	}
+
+.MainBody
+	{
+	width:				1200px;
+	border:				1px solid Black;
+	background-color:	#FBFBFB;
+	margin-top:			20px;
+    margin-left:		auto;
+    margin-right:		auto;
+	}
+	
+table.MainTable
+	{
+	width: 				1170px; 
+	margin: 			0 auto;
+	border-collapse: 	collapse;
+	}
+	
+.MainBodyFixed
+	{
+	width:				1200px;
+	height:				920px;
+	border:				1px solid Black;
+	background-color: 	#FBFBFB;
+	margin:				20px auto 0 auto;
+	border-collapse: 	collapse;
+	}
+	
+	
+div.ListBody
+	{
+	width:				972px;
+	height:				750px;
+	}
+		
+tr.ListHeadingBar
+	{
+	background-color:	#308F5A;
+	height:				31px;
+	}
+	
+	
+table
+        {
+    empty-cells:		show;
+    }
+
+table.filter
+        {
+    border-spacing:		2px;
+	width:				170px;
+	background-color:	#ECF7F1;
+	margin-bottom: 		3px;
+    }
+	
+td
+	{
+	color:            	black;
+	font-size:        	10pt;
+	}
+	
+td.row
+	{
+	font-size: 			10pt;
+	height: 			21px;
+	}
+		
+td.head
+	{
+	font-size: 			10pt;
+	color: 				white;
+	font-weight: 		bold;
+	vertical-align: 	middle; 
+	height: 			20px;
+	}
+
+th
+	{
+	color:				black;
+	font-size:			10pt;
+	font-weight:		bold;
+	}
+
+a
+	{
+	color:				#222222;
+	}
+	
+td.row atakeout
+	{
+	font-size: 			8pt;
+	}
+	
+a.greenButton
+	{
+	font-family:		Verdana, Arial, Helvetica, sans-serif;
+	font-weight:      bold;
+	font-size:        11px;
+	padding:          4px 4px;
+	border-top:       1px solid #E0E0E0;
+	border-right:     1px solid black;
+	border-bottom:    1px solid black;
+	border-left:      1px solid #E0E0E0;
+	background-color: #C8E181;
+	color:            #000000;
+	text-align:       center;
+	text-decoration:  none;
+	}
+
+a.greenButton:hover
+	{
+	border-color:     black white white black;
+	color:            #888888;
+	}
+
+.buttonLightGreen
+	{
+	font-family:		Verdana, Arial, Helvetica, sans-serif;
+    font-weight:		bold;
+    font-size:			8pt;
+	color:				#246B44;
+	width:				50px;
+	display:			inline-block;
+	padding:			1px 2px;
+	background-color:	#D8F0E3;
+	border-top:			1px solid #C0C0C0;
+	border-right:		1px solid black;
+	border-bottom:		1px solid black;
+	border-left:		1px solid #C0C0C0;
+	text-align:			center;
+	text-decoration:	none;
+	margin-right:		2px;
+	}
+    
+.buttonLightGreen:hover
+	{
+	color: 				white;
+	border-color: 		black #C0C0C0 #C0C0C0 black;
+	}
+	  
+.button50
+	{
+	width: 				50px;
+	}
+	
+.button90
+	{
+	width: 				90px;
+	}
+
+a.TopRightLink
+	{
+	font-family:		Verdana, Arial, Helvetica, sans-serif;
+	font-weight:		bold;
+	font-size:			10pt;
+	color:				#000000;
+	padding-left:		1em;
+	}
+
+a.TopRightLink:hover
+	{
+	color:				#888888;
+	}
+	
+a.TextInlineLink
+	{
+	font-family:		Verdana, Arial, Helvetica, sans-serif;
+	font-weight:		bold;
+	font-size:			9pt;
+	color:				#000000;
+	padding-left:		1em;
+	}
+
+a.TextInlineLink:hover
+	{
+	color:				#888888;
+	}
+	
+	
+.button
+      {
+        font-weight :        bold;
+        font-size :          1em;
+        font-family :        Verdana, Arial, Helvetica, sans-serif;
+        color :              #336600;
+        padding :            .25em .5em;
+        background-color :   #CDE2A1;
+        border-top :         .125em solid #C0C0C0;
+        border-right :       .125em solid black;
+        border-bottom :      .125em solid black;
+        border-left :        .125em solid #C0C0C0;
+        text-align :         center;
+        text-decoration :    none;
+        margin-bottom :      2em;
+      }
+      
+.button:hover
+      {
+        font-weight :        bold;
+        font-size :          1em;
+        font-family :        Verdana, Arial, Helvetica, sans-serif;
+        color :              white;
+        background-color :   #336600;
+        border-color :       black #C0C0C0 #C0C0C0 black;
+      }
+
+.buttonSearch
+      {
+    font-weight: bold;
+    font-size: 1em;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    color: #246B44;
+    padding: .25em .5em;
+    background-color: #D8F0E3;
+    border-top: .125em solid #C0C0C0;
+    border-right: .125em solid black;
+    border-bottom: .125em solid black;
+    border-left: .125em solid #C0C0C0;
+    text-align: center;
+    text-decoration: none;
+    }
+    
+.buttonSearch:hover
+      {
+    color: white;
+    border-color: black #C0C0C0 #C0C0C0 black;
+    }
+	  
+.listing
+	{
+		font-size:			10pt;
+	}
+
+.ToolTip
+	{
+    /*margin:			100px;*/
+	}	
+	
+.ToolTip:hover .ToolTipBox 
+	{
+    display: 		block;
+	}
+
+.ToolTipBox
+	{
+    display: 		none;
+    background: 	#FFFFCC;
+	margin-top:		25px;
+    margin-left: 	50px;
+    padding: 		5px;
+    position: 		absolute;
+    z-index: 		1000;
+	border:			1px solid black;
+	}	

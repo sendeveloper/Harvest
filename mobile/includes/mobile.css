@@ -1,0 +1,84 @@
+.header  
+	{ 
+	background: #CDE2A1; 
+	color: #336600; 
+	border-bottom: solid 2px #336600; 
+	height: auto; 
+	margin: 0 0 5px 0; 
+	padding: 2px;
+	text-align: center; 
+	}
+
+.header img 
+	{ 
+	float: none; 
+	margin-left: 0; 
+	}
+
+#header
+	{
+	position: relative;
+	top: 0px;
+	}
+    
+body
+	{
+	width: 300px; 
+	}
+
+.footer  
+	{ 
+	background: #CDE2A1; 
+	color: #336600; 
+	border-top: solid 2px #336600; 
+	margin: 10px 0 0 0; 
+	text-align: center
+	}
+
+.tableHeading 
+	{ 
+	font-weight: bold; 
+	color: #336600
+	}
+
+
+table.padsales
+	{
+	margin-left: 60px;
+	}
+
+hr       
+	{ 
+	clear: both; 
+	border:solid; 
+	border-width:1px; 
+	border-bottom-color:#007300; 
+	border-top-color:#ffffff; 
+	border-left-color:#ffffff; 
+	border-right-color:#ffffff;
+	}
+
+
+a.button 
+	{
+	font-weight: bold; 
+	font-size: 9px; 
+	font-family: Verdana, Arial, Helvetica, sans-serif;	
+	padding: 2px 4px; 
+	border-top: 1px solid #E0E0E0;
+	border-right: 1px solid black; 
+	border-bottom: 1px solid black;
+	border-left: 1px solid #E0E0E0; 
+	background-color: red; 
+	color: #FFFFFF;
+	display: block;
+	text-align: center; 
+	width: 60px;
+	text-decoration: none;
+	}
+
+a.button:hover 
+	{
+	border-color: black white white black;
+	}
+
