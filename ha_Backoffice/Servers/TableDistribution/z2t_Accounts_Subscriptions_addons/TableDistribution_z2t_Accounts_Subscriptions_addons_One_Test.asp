@@ -169,6 +169,60 @@
             linkToError("ajax timeout", "Timed out with no response.")(document.querySelectorAll("#resultServer" + 6)[0].firstChild);
         }
 
+        var successFn7 = function(ignore, r, timer) 
+        {
+            clearTimeout(timer);
+            getUpdateResponse(ignore, r, 7);
+        };
+
+        var errorFn7 = function(r, ignore, timer) 
+		{
+            clearTimeout(timer);
+            errorfn(r, ignore, 7);
+        };
+
+        var timeoutFn7 = function(ignore, ignore2, timer) 
+        {
+            clearTimeout(timer);
+            linkToError("ajax timeout", "Timed out with no response.")(document.querySelectorAll("#resultServer" + 7)[0].firstChild);
+        }
+
+        var successFn8 = function(ignore, r, timer) 
+        {
+            clearTimeout(timer);
+            getUpdateResponse(ignore, r, 8);
+        };
+
+        var errorFn8 = function(r, ignore, timer) 
+		{
+            clearTimeout(timer);
+            errorfn(r, ignore, 8);
+        };
+
+        var timeoutFn8 = function(ignore, ignore2, timer) 
+        {
+            clearTimeout(timer);
+            linkToError("ajax timeout", "Timed out with no response.")(document.querySelectorAll("#resultServer" + 8)[0].firstChild);
+        }
+
+        var successFn9 = function(ignore, r, timer) 
+        {
+            clearTimeout(timer);
+            getUpdateResponse(ignore, r, 9);
+        };
+
+        var errorFn9 = function(r, ignore, timer) 
+		{
+            clearTimeout(timer);
+            errorfn(r, ignore, 9);
+        };
+
+        var timeoutFn9 = function(ignore, ignore2, timer) 
+        {
+            clearTimeout(timer);
+            linkToError("ajax timeout", "Timed out with no response.")(document.querySelectorAll("#resultServer" + 9)[0].firstChild);
+        }
+
         http[1] = xhr(getURL(1), successFn1, errorFn1, 15000, timeoutFn1);
         errorFn1.timer = http.timer;
         successFn1 = http.timer;
@@ -199,7 +253,25 @@
         successFn6 = http.timer;
         http[6].get();
 
-        
+        http[6] = xhr(getURL(6), successFn6, errorFn6, 15000, timeoutFn6);
+        errorFn6.timer = http.timer;
+        successFn6 = http.timer;
+        http[6].get();
+
+        http[7] = xhr(getURL(7), successFn7, errorFn7, 15000, timeoutFn7);
+        errorFn7.timer = http.timer;
+        successFn7 = http.timer;
+        http[7].get();
+
+        http[8] = xhr(getURL(8), successFn8, errorFn8, 15000, timeoutFn8);
+        errorFn8.timer = http.timer;
+        successFn8 = http.timer;
+        http[8].get();
+
+        http[9] = xhr(getURL(9), successFn9, errorFn9, 15000, timeoutFn9);
+        errorFn9.timer = http.timer;
+        successFn9 = http.timer;
+        http[9].get();
 	}
 
     function getUpdateResponse(ignore, r, id) 
@@ -287,10 +359,10 @@
 		}
 	}
 	function xhrDefaultFn(body) {
-		var element = document.createElement("textarea");
-		document.body.appendChild(element);
-		element.style.width = "100%";
-		element.innerHTML = body;
+		// var element = document.createElement("textarea");
+		// document.body.appendChild(element);
+		// element.style.width = "100%";
+		// element.innerHTML = body;
 		return;
 	}
 	function xhrDefaultError(body) {
