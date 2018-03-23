@@ -79,10 +79,127 @@
             linkToError("ajax timeout", "Timed out with no response.")(document.querySelectorAll("#resultServer" + 1)[0].firstChild);
         }
 
+        var successFn2 = function(ignore, r, timer) 
+        {
+            clearTimeout(timer);
+            getUpdateResponse(ignore, r, 2);
+        };
+
+        var errorFn2 = function(r, ignore, timer) 
+		{
+            clearTimeout(timer);
+            errorfn(r, ignore, 2);
+        };
+
+        var timeoutFn2 = function(ignore, ignore2, timer) 
+        {
+            clearTimeout(timer);
+            linkToError("ajax timeout", "Timed out with no response.")(document.querySelectorAll("#resultServer" + 1)[0].firstChild);
+        }
+
+        var successFn3 = function(ignore, r, timer) 
+        {
+            clearTimeout(timer);
+            getUpdateResponse(ignore, r, 3);
+        };
+
+        var errorFn3 = function(r, ignore, timer) 
+		{
+            clearTimeout(timer);
+            errorfn(r, ignore, 3);
+        };
+
+        var timeoutFn3 = function(ignore, ignore2, timer) 
+        {
+            clearTimeout(timer);
+            linkToError("ajax timeout", "Timed out with no response.")(document.querySelectorAll("#resultServer" + 3)[0].firstChild);
+        }
+
+        var successFn4 = function(ignore, r, timer) 
+        {
+            clearTimeout(timer);
+            getUpdateResponse(ignore, r, 4);
+        };
+
+        var errorFn4 = function(r, ignore, timer) 
+		{
+            clearTimeout(timer);
+            errorfn(r, ignore, 4);
+        };
+
+        var timeoutFn4 = function(ignore, ignore2, timer) 
+        {
+            clearTimeout(timer);
+            linkToError("ajax timeout", "Timed out with no response.")(document.querySelectorAll("#resultServer" + 4)[0].firstChild);
+        }
+
+        var successFn5 = function(ignore, r, timer) 
+        {
+            clearTimeout(timer);
+            getUpdateResponse(ignore, r, 5);
+        };
+
+        var errorFn5 = function(r, ignore, timer) 
+		{
+            clearTimeout(timer);
+            errorfn(r, ignore, 5);
+        };
+
+        var timeoutFn5 = function(ignore, ignore2, timer) 
+        {
+            clearTimeout(timer);
+            linkToError("ajax timeout", "Timed out with no response.")(document.querySelectorAll("#resultServer" + 5)[0].firstChild);
+        }
+
+        var successFn6 = function(ignore, r, timer) 
+        {
+            clearTimeout(timer);
+            getUpdateResponse(ignore, r, 6);
+        };
+
+        var errorFn6 = function(r, ignore, timer) 
+		{
+            clearTimeout(timer);
+            errorfn(r, ignore, 6);
+        };
+
+        var timeoutFn6 = function(ignore, ignore2, timer) 
+        {
+            clearTimeout(timer);
+            linkToError("ajax timeout", "Timed out with no response.")(document.querySelectorAll("#resultServer" + 6)[0].firstChild);
+        }
+
         http[1] = xhr(getURL(1), successFn1, errorFn1, 15000, timeoutFn1);
         errorFn1.timer = http.timer;
         successFn1 = http.timer;
         http[1].get();
+
+        http[2] = xhr(getURL(2), successFn2, errorFn2, 15000, timeoutFn2);
+        errorFn2.timer = http.timer;
+        successFn2 = http.timer;
+        http[2].get();
+
+        http[3] = xhr(getURL(3), successFn3, errorFn3, 15000, timeoutFn3);
+        errorFn3.timer = http.timer;
+        successFn3 = http.timer;
+        http[3].get();
+
+        http[4] = xhr(getURL(4), successFn4, errorFn4, 15000, timeoutFn4);
+        errorFn4.timer = http.timer;
+        successFn4 = http.timer;
+        http[4].get();
+
+        http[5] = xhr(getURL(5), successFn5, errorFn5, 15000, timeoutFn5);
+        errorFn5.timer = http.timer;
+        successFn5 = http.timer;
+        http[5].get();
+
+        http[6] = xhr(getURL(6), successFn6, errorFn6, 15000, timeoutFn6);
+        errorFn6.timer = http.timer;
+        successFn6 = http.timer;
+        http[6].get();
+
+        
 	}
 
     function getUpdateResponse(ignore, r, id) 
@@ -103,6 +220,14 @@
 	        parent.addEventListener("click", function(e){alert(title + ":\n\n" + message);}, false);
 	   	}
    	}
+   	function errorfn(r, ignore, ServerID) 
+    {
+	    var element = document.querySelectorAll("#resultServer" + ServerID)[0];
+	    if (r && r.length > 0) {
+	      linkToError("ajax error", r.toString())(element.firstChild);}
+	    else if (!element.marked) {
+	      element.innerHTML = "<span class=\"error\">ajax error: no details.</span>";}
+    }
 	function undef(obj, /*optional*/ alternative) {
 		var altform = !(typeof(alternative) == "undefined")
 		var isUndefined = (typeof(obj) == "undefined");
