@@ -42,7 +42,6 @@
 	var totalUpdated = 0;
     var countColumn = {};
     var countState = {};
-    var displayedAll = false;
 		
     function formLoad()
 	{
@@ -423,31 +422,24 @@
     }
     function showAllCount()
     {
-        console.log(countState);
-        console.log(countColumn);
-        if (!displayedAll)
-        {
-            for(var id in countColumn){
-                var value = countColumn[id];
-                var eleID = 'resultUpdated'+id.toString();
-                console.log(id);
-                if (countState[id] == 1)
-                    document.getElementById(eleID).innerHTML = value;
-                else if (countState[id] == 2)
-                {
-                    var element = document.querySelectorAll("#" + id)[0];
-                    var contents = countColumn[id].split(":::");
-                    element.innerHTML = "<span class=\"error\">" + contents[0] + "</span>";
-                    element.style.cursor = "pointer";
-                    element.childNodes[0].style.cursor = "pointer";
-                    element.addEventListener("click", function(e){alert(contents[0] + ":\n\n" + contents[1]);}, false);
-                }
-                else if (countState[id] == 3){
-                    var element = document.querySelectorAll("#" + id)[0];
-                    element.innerHTML = countColumn[id];
-                }
+        for(var id in countColumn){
+            var value = countColumn[id];
+            var eleID = id.toString();
+            if (countState[id] == 1)
+                document.getElementById(eleID).innerHTML = value;
+            else if (countState[id] == 2)
+            {
+                var element = document.querySelectorAll("#" + id)[0];
+                var contents = countColumn[id].split(":::");
+                element.innerHTML = "<span class=\"error\">" + contents[0] + "</span>";
+                element.style.cursor = "pointer";
+                element.childNodes[0].style.cursor = "pointer";
+                element.addEventListener("click", function(e){alert(contents[0] + ":\n\n" + contents[1]);}, false);
             }
-            displayedAll = true;
+            else if (countState[id] == 3){
+                var element = document.querySelectorAll("#" + id)[0];
+                element.innerHTML = countColumn[id];
+            }
         }
     }
     function getUpdateResponse(ignore, r, id) 
@@ -456,8 +448,8 @@
 		document.getElementById(eleID).innerHTML = r.getElementsByTagName('response_server_name')[0].firstChild.nodeValue;
 		var eleID = 'resultDatabase'+id.toString();
 		document.getElementById(eleID).innerHTML = r.getElementsByTagName('response_database_name')[0].firstChild.nodeValue;
-        countState[id] = 1;
-        countColumn[id] = r.getElementsByTagName('response_records_updated')[0].firstChild.nodeValue;
+        countState['resultUpdated' + id] = 1;
+        countColumn['resultUpdated' + id] = r.getElementsByTagName('response_records_updated')[0].firstChild.nodeValue;
         if (getRowCount() == locationCount)
         {
             showAllCount();
@@ -481,13 +473,12 @@
 	    if (r && r.length > 0) {
             linkToError("ajax error", r.toString())(element.firstChild);}
 	    else if (!element.marked) {
-            // console.log('called2');
-            // countState["resultUpdated" + ServerID] = 3;
-            // countColumn["resultUpdated" + ServerID] = "<span class=\"error\">ajax error: no details.</span>";
-            // if (getRowCount() == locationCount)
-            // {
-            //     showAllCount();
-            // }
+            countState["resultUpdated" + ServerID] = 3;
+            countColumn["resultUpdated" + ServerID] = "<span class=\"error\">ajax error: no details.</span>";
+            if (getRowCount() == locationCount)
+            {
+                showAllCount();
+            }
             // element.innerHTML = "<span class=\"error\">ajax error: no details.</span>";
         }
     }
