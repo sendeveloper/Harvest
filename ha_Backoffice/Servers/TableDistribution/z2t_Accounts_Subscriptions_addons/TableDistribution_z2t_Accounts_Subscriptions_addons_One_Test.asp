@@ -42,6 +42,7 @@
 	var totalUpdated = 0;
     var countColumn = {};
     var countState = {};
+    var displayedContent = false;
 		
     function formLoad()
 	{
@@ -333,82 +334,82 @@
             linkToError("ajax timeout", "Timed out with no response.")(document.querySelectorAll("#resultUpdated" + 15)[0].firstChild);
         }
 
-        http[1] = xhr(getURL(1), successFn1, errorFn1, 5000, timeoutFn1);
+        http[1] = xhr(getURL(1), successFn1, errorFn1, 15000, timeoutFn1);
         errorFn1.timer = http.timer;
         successFn1 = http.timer;
         http[1].get();
 
-        http[2] = xhr(getURL(2), successFn2, errorFn2, 5000, timeoutFn2);
+        http[2] = xhr(getURL(2), successFn2, errorFn2, 15000, timeoutFn2);
         errorFn2.timer = http.timer;
         successFn2 = http.timer;
         http[2].get();
 
-        http[3] = xhr(getURL(3), successFn3, errorFn3, 5000, timeoutFn3);
+        http[3] = xhr(getURL(3), successFn3, errorFn3, 15000, timeoutFn3);
         errorFn3.timer = http.timer;
         successFn3 = http.timer;
         http[3].get();
 
-        http[4] = xhr(getURL(4), successFn4, errorFn4, 5000, timeoutFn4);
+        http[4] = xhr(getURL(4), successFn4, errorFn4, 15000, timeoutFn4);
         errorFn4.timer = http.timer;
         successFn4 = http.timer;
         http[4].get();
 
-        http[5] = xhr(getURL(5), successFn5, errorFn5, 5000, timeoutFn5);
+        http[5] = xhr(getURL(5), successFn5, errorFn5, 15000, timeoutFn5);
         errorFn5.timer = http.timer;
         successFn5 = http.timer;
         http[5].get();
 
-        http[6] = xhr(getURL(6), successFn6, errorFn6, 5000, timeoutFn6);
+        http[6] = xhr(getURL(6), successFn6, errorFn6, 15000, timeoutFn6);
         errorFn6.timer = http.timer;
         successFn6 = http.timer;
         http[6].get();
 
-        http[6] = xhr(getURL(6), successFn6, errorFn6, 5000, timeoutFn6);
+        http[6] = xhr(getURL(6), successFn6, errorFn6, 15000, timeoutFn6);
         errorFn6.timer = http.timer;
         successFn6 = http.timer;
         http[6].get();
 
-        http[7] = xhr(getURL(7), successFn7, errorFn7, 5000, timeoutFn7);
+        http[7] = xhr(getURL(7), successFn7, errorFn7, 15000, timeoutFn7);
         errorFn7.timer = http.timer;
         successFn7 = http.timer;
         http[7].get();
 
-        http[8] = xhr(getURL(8), successFn8, errorFn8, 5000, timeoutFn8);
+        http[8] = xhr(getURL(8), successFn8, errorFn8, 15000, timeoutFn8);
         errorFn8.timer = http.timer;
         successFn8 = http.timer;
         http[8].get();
 
-        http[9] = xhr(getURL(9), successFn9, errorFn9, 5000, timeoutFn9);
+        http[9] = xhr(getURL(9), successFn9, errorFn9, 15000, timeoutFn9);
         errorFn9.timer = http.timer;
         successFn9 = http.timer;
         http[9].get();
 
-        http[10] = xhr(getURL(10), successFn10, errorFn10, 5000, timeoutFn10);
+        http[10] = xhr(getURL(10), successFn10, errorFn10, 15000, timeoutFn10);
         errorFn10.timer = http.timer;
         successFn10 = http.timer;
         http[10].get();
 
-        http[11] = xhr(getURL(11), successFn11, errorFn11, 5000, timeoutFn11);
+        http[11] = xhr(getURL(11), successFn11, errorFn11, 15000, timeoutFn11);
         errorFn11.timer = http.timer;
         successFn11 = http.timer;
         http[11].get();
 
-		http[12] = xhr(getURL(12), successFn12, errorFn12, 5000, timeoutFn12);
+		http[12] = xhr(getURL(12), successFn12, errorFn12, 15000, timeoutFn12);
         errorFn12.timer = http.timer;
         successFn12 = http.timer;
         http[12].get();
 
-        http[13] = xhr(getURL(13), successFn13, errorFn13, 5000, timeoutFn13);
+        http[13] = xhr(getURL(13), successFn13, errorFn13, 15000, timeoutFn13);
         errorFn13.timer = http.timer;
         successFn13 = http.timer;
         http[13].get();
 
-        http[14] = xhr(getURL(14), successFn14, errorFn14, 5000, timeoutFn14);
+        http[14] = xhr(getURL(14), successFn14, errorFn14, 15000, timeoutFn14);
         errorFn14.timer = http.timer;
         successFn14 = http.timer;
         http[14].get();
 
-        http[15] = xhr(getURL(15), successFn15, errorFn15, 5000, timeoutFn15);
+        http[15] = xhr(getURL(15), successFn15, errorFn15, 15000, timeoutFn15);
         errorFn15.timer = http.timer;
         successFn15 = http.timer;
         http[15].get();        
@@ -422,6 +423,7 @@
     }
     function showAllCount()
     {
+        if (displayedContent) return;
         for(var id in countColumn){
             var value = countColumn[id];
             var eleID = id.toString();
@@ -441,6 +443,7 @@
                 element.innerHTML = countColumn[id];
             }
         }
+        displayedContent = true;
     }
     function getUpdateResponse(ignore, r, id) 
 	{
