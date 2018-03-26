@@ -545,13 +545,13 @@
 			<td width="15%">
 			  &nbsp;
 			</td>
-			<td class="subHead" width="35%">
+			<td class="subHead" width="30%">
 			  Server
 			</td>
-			<td class="subHead" width="35%">
+			<td class="subHead" width="30%">
 			  Database
 			</td>
-			<td class="subHead" width="15%">
+			<td class="subHead" width="25%">
 			  Count
 			</td>
 		  </tr>
