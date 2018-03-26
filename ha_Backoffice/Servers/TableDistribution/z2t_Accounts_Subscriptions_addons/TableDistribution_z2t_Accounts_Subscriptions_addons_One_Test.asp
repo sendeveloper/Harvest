@@ -40,6 +40,9 @@
 	var updateFlag = 0;
 	var totalInserted = 0;
 	var totalUpdated = 0;
+    var countColumn = {};
+    var countState = {};
+    var displayedAll = false;
 		
     function formLoad()
 	{
@@ -76,7 +79,7 @@
         var timeoutFn1 = function(ignore, ignore2, timer) 
         {
             clearTimeout(timer);
-            linkToError("ajax timeout", "Timed out with no response.")(document.querySelectorAll("#resultServer" + 1)[0].firstChild);
+            linkToError("ajax timeout", "Timed out with no response.")(document.querySelectorAll("#resultUpdated" + 1)[0].firstChild);
         }
 
         var successFn2 = function(ignore, r, timer) 
@@ -94,7 +97,7 @@
         var timeoutFn2 = function(ignore, ignore2, timer) 
         {
             clearTimeout(timer);
-            linkToError("ajax timeout", "Timed out with no response.")(document.querySelectorAll("#resultServer" + 1)[0].firstChild);
+            linkToError("ajax timeout", "Timed out with no response.")(document.querySelectorAll("#resultUpdated" + 1)[0].firstChild);
         }
 
         var successFn3 = function(ignore, r, timer) 
@@ -112,7 +115,7 @@
         var timeoutFn3 = function(ignore, ignore2, timer) 
         {
             clearTimeout(timer);
-            linkToError("ajax timeout", "Timed out with no response.")(document.querySelectorAll("#resultServer" + 3)[0].firstChild);
+            linkToError("ajax timeout", "Timed out with no response.")(document.querySelectorAll("#resultUpdated" + 3)[0].firstChild);
         }
 
         var successFn4 = function(ignore, r, timer) 
@@ -130,7 +133,7 @@
         var timeoutFn4 = function(ignore, ignore2, timer) 
         {
             clearTimeout(timer);
-            linkToError("ajax timeout", "Timed out with no response.")(document.querySelectorAll("#resultServer" + 4)[0].firstChild);
+            linkToError("ajax timeout", "Timed out with no response.")(document.querySelectorAll("#resultUpdated" + 4)[0].firstChild);
         }
 
         var successFn5 = function(ignore, r, timer) 
@@ -148,7 +151,7 @@
         var timeoutFn5 = function(ignore, ignore2, timer) 
         {
             clearTimeout(timer);
-            linkToError("ajax timeout", "Timed out with no response.")(document.querySelectorAll("#resultServer" + 5)[0].firstChild);
+            linkToError("ajax timeout", "Timed out with no response.")(document.querySelectorAll("#resultUpdated" + 5)[0].firstChild);
         }
 
         var successFn6 = function(ignore, r, timer) 
@@ -166,7 +169,7 @@
         var timeoutFn6 = function(ignore, ignore2, timer) 
         {
             clearTimeout(timer);
-            linkToError("ajax timeout", "Timed out with no response.")(document.querySelectorAll("#resultServer" + 6)[0].firstChild);
+            linkToError("ajax timeout", "Timed out with no response.")(document.querySelectorAll("#resultUpdated" + 6)[0].firstChild);
         }
 
         var successFn7 = function(ignore, r, timer) 
@@ -184,7 +187,7 @@
         var timeoutFn7 = function(ignore, ignore2, timer) 
         {
             clearTimeout(timer);
-            linkToError("ajax timeout", "Timed out with no response.")(document.querySelectorAll("#resultServer" + 7)[0].firstChild);
+            linkToError("ajax timeout", "Timed out with no response.")(document.querySelectorAll("#resultUpdated" + 7)[0].firstChild);
         }
 
         var successFn8 = function(ignore, r, timer) 
@@ -202,7 +205,7 @@
         var timeoutFn8 = function(ignore, ignore2, timer) 
         {
             clearTimeout(timer);
-            linkToError("ajax timeout", "Timed out with no response.")(document.querySelectorAll("#resultServer" + 8)[0].firstChild);
+            linkToError("ajax timeout", "Timed out with no response.")(document.querySelectorAll("#resultUpdated" + 8)[0].firstChild);
         }
 
         var successFn9 = function(ignore, r, timer) 
@@ -220,7 +223,7 @@
         var timeoutFn9 = function(ignore, ignore2, timer) 
         {
             clearTimeout(timer);
-            linkToError("ajax timeout", "Timed out with no response.")(document.querySelectorAll("#resultServer" + 9)[0].firstChild);
+            linkToError("ajax timeout", "Timed out with no response.")(document.querySelectorAll("#resultUpdated" + 9)[0].firstChild);
         }
 
         var successFn10 = function(ignore, r, timer) 
@@ -238,7 +241,7 @@
         var timeoutFn10 = function(ignore, ignore2, timer) 
         {
             clearTimeout(timer);
-            linkToError("ajax timeout", "Timed out with no response.")(document.querySelectorAll("#resultServer" + 10)[0].firstChild);
+            linkToError("ajax timeout", "Timed out with no response.")(document.querySelectorAll("#resultUpdated" + 10)[0].firstChild);
         }
 
         var successFn11 = function(ignore, r, timer) 
@@ -256,7 +259,7 @@
         var timeoutFn11 = function(ignore, ignore2, timer) 
         {
             clearTimeout(timer);
-            linkToError("ajax timeout", "Timed out with no response.")(document.querySelectorAll("#resultServer" + 11)[0].firstChild);
+            linkToError("ajax timeout", "Timed out with no response.")(document.querySelectorAll("#resultUpdated" + 11)[0].firstChild);
         }
 
         var successFn12 = function(ignore, r, timer) 
@@ -274,7 +277,7 @@
         var timeoutFn12 = function(ignore, ignore2, timer) 
         {
             clearTimeout(timer);
-            linkToError("ajax timeout", "Timed out with no response.")(document.querySelectorAll("#resultServer" + 12)[0].firstChild);
+            linkToError("ajax timeout", "Timed out with no response.")(document.querySelectorAll("#resultUpdated" + 12)[0].firstChild);
         }
 
         var successFn13 = function(ignore, r, timer) 
@@ -292,7 +295,7 @@
         var timeoutFn13 = function(ignore, ignore2, timer) 
         {
             clearTimeout(timer);
-            linkToError("ajax timeout", "Timed out with no response.")(document.querySelectorAll("#resultServer" + 13)[0].firstChild);
+            linkToError("ajax timeout", "Timed out with no response.")(document.querySelectorAll("#resultUpdated" + 13)[0].firstChild);
         }
 
         var successFn14 = function(ignore, r, timer) 
@@ -310,7 +313,7 @@
         var timeoutFn14 = function(ignore, ignore2, timer) 
         {
             clearTimeout(timer);
-            linkToError("ajax timeout", "Timed out with no response.")(document.querySelectorAll("#resultServer" + 14)[0].firstChild);
+            linkToError("ajax timeout", "Timed out with no response.")(document.querySelectorAll("#resultUpdated" + 14)[0].firstChild);
         }
 
         var successFn15 = function(ignore, r, timer) 
@@ -328,115 +331,165 @@
         var timeoutFn15 = function(ignore, ignore2, timer) 
         {
             clearTimeout(timer);
-            linkToError("ajax timeout", "Timed out with no response.")(document.querySelectorAll("#resultServer" + 15)[0].firstChild);
+            linkToError("ajax timeout", "Timed out with no response.")(document.querySelectorAll("#resultUpdated" + 15)[0].firstChild);
         }
 
-        http[1] = xhr(getURL(1), successFn1, errorFn1, 15000, timeoutFn1);
+        http[1] = xhr(getURL(1), successFn1, errorFn1, 5000, timeoutFn1);
         errorFn1.timer = http.timer;
         successFn1 = http.timer;
         http[1].get();
 
-        http[2] = xhr(getURL(2), successFn2, errorFn2, 15000, timeoutFn2);
+        http[2] = xhr(getURL(2), successFn2, errorFn2, 5000, timeoutFn2);
         errorFn2.timer = http.timer;
         successFn2 = http.timer;
         http[2].get();
 
-        http[3] = xhr(getURL(3), successFn3, errorFn3, 15000, timeoutFn3);
+        http[3] = xhr(getURL(3), successFn3, errorFn3, 5000, timeoutFn3);
         errorFn3.timer = http.timer;
         successFn3 = http.timer;
         http[3].get();
 
-        http[4] = xhr(getURL(4), successFn4, errorFn4, 15000, timeoutFn4);
+        http[4] = xhr(getURL(4), successFn4, errorFn4, 5000, timeoutFn4);
         errorFn4.timer = http.timer;
         successFn4 = http.timer;
         http[4].get();
 
-        http[5] = xhr(getURL(5), successFn5, errorFn5, 15000, timeoutFn5);
+        http[5] = xhr(getURL(5), successFn5, errorFn5, 5000, timeoutFn5);
         errorFn5.timer = http.timer;
         successFn5 = http.timer;
         http[5].get();
 
-        http[6] = xhr(getURL(6), successFn6, errorFn6, 15000, timeoutFn6);
+        http[6] = xhr(getURL(6), successFn6, errorFn6, 5000, timeoutFn6);
         errorFn6.timer = http.timer;
         successFn6 = http.timer;
         http[6].get();
 
-        http[6] = xhr(getURL(6), successFn6, errorFn6, 15000, timeoutFn6);
+        http[6] = xhr(getURL(6), successFn6, errorFn6, 5000, timeoutFn6);
         errorFn6.timer = http.timer;
         successFn6 = http.timer;
         http[6].get();
 
-        http[7] = xhr(getURL(7), successFn7, errorFn7, 15000, timeoutFn7);
+        http[7] = xhr(getURL(7), successFn7, errorFn7, 5000, timeoutFn7);
         errorFn7.timer = http.timer;
         successFn7 = http.timer;
         http[7].get();
 
-        http[8] = xhr(getURL(8), successFn8, errorFn8, 15000, timeoutFn8);
+        http[8] = xhr(getURL(8), successFn8, errorFn8, 5000, timeoutFn8);
         errorFn8.timer = http.timer;
         successFn8 = http.timer;
         http[8].get();
 
-        http[9] = xhr(getURL(9), successFn9, errorFn9, 15000, timeoutFn9);
+        http[9] = xhr(getURL(9), successFn9, errorFn9, 5000, timeoutFn9);
         errorFn9.timer = http.timer;
         successFn9 = http.timer;
         http[9].get();
 
-        http[10] = xhr(getURL(10), successFn10, errorFn10, 15000, timeoutFn10);
+        http[10] = xhr(getURL(10), successFn10, errorFn10, 5000, timeoutFn10);
         errorFn10.timer = http.timer;
         successFn10 = http.timer;
         http[10].get();
 
-        http[11] = xhr(getURL(11), successFn11, errorFn11, 15000, timeoutFn11);
+        http[11] = xhr(getURL(11), successFn11, errorFn11, 5000, timeoutFn11);
         errorFn11.timer = http.timer;
         successFn11 = http.timer;
         http[11].get();
 
-		http[12] = xhr(getURL(12), successFn12, errorFn12, 15000, timeoutFn12);
+		http[12] = xhr(getURL(12), successFn12, errorFn12, 5000, timeoutFn12);
         errorFn12.timer = http.timer;
         successFn12 = http.timer;
         http[12].get();
 
-        http[13] = xhr(getURL(13), successFn13, errorFn13, 15000, timeoutFn13);
+        http[13] = xhr(getURL(13), successFn13, errorFn13, 5000, timeoutFn13);
         errorFn13.timer = http.timer;
         successFn13 = http.timer;
         http[13].get();
 
-        http[14] = xhr(getURL(14), successFn14, errorFn14, 15000, timeoutFn14);
+        http[14] = xhr(getURL(14), successFn14, errorFn14, 5000, timeoutFn14);
         errorFn14.timer = http.timer;
         successFn14 = http.timer;
         http[14].get();
 
-        http[15] = xhr(getURL(15), successFn15, errorFn15, 15000, timeoutFn15);
+        http[15] = xhr(getURL(15), successFn15, errorFn15, 5000, timeoutFn15);
         errorFn15.timer = http.timer;
         successFn15 = http.timer;
         http[15].get();        
 	}
-
+    function getRowCount() {
+        var count = 0;
+        for(var id in countColumn){
+            count++;
+        }
+        return count;
+    }
+    function showAllCount()
+    {
+        console.log(countState);
+        console.log(countColumn);
+        if (!displayedAll)
+        {
+            for(var id in countColumn){
+                var value = countColumn[id];
+                var eleID = 'resultUpdated'+id.toString();
+                console.log(id);
+                if (countState[id] == 1)
+                    document.getElementById(eleID).innerHTML = value;
+                else if (countState[id] == 2)
+                {
+                    var element = document.querySelectorAll("#" + id)[0];
+                    var contents = countColumn[id].split(":::");
+                    element.innerHTML = "<span class=\"error\">" + contents[0] + "</span>";
+                    element.style.cursor = "pointer";
+                    element.childNodes[0].style.cursor = "pointer";
+                    element.addEventListener("click", function(e){alert(contents[0] + ":\n\n" + contents[1]);}, false);
+                }
+                else if (countState[id] == 3){
+                    var element = document.querySelectorAll("#" + id)[0];
+                    element.innerHTML = countColumn[id];
+                }
+            }
+            displayedAll = true;
+        }
+    }
     function getUpdateResponse(ignore, r, id) 
 	{
         var eleID = 'resultServer'+id.toString();
 		document.getElementById(eleID).innerHTML = r.getElementsByTagName('response_server_name')[0].firstChild.nodeValue;
 		var eleID = 'resultDatabase'+id.toString();
 		document.getElementById(eleID).innerHTML = r.getElementsByTagName('response_database_name')[0].firstChild.nodeValue;
-		var eleID = 'resultUpdated'+id.toString();
-		document.getElementById(eleID).innerHTML = r.getElementsByTagName('response_records_updated')[0].firstChild.nodeValue;
+        countState[id] = 1;
+        countColumn[id] = r.getElementsByTagName('response_records_updated')[0].firstChild.nodeValue;
+        if (getRowCount() == locationCount)
+        {
+            showAllCount();
+        }
 	}
 	function linkToError(title, message) {
 		return function showError(e) {
-	        var parent = e.parentNode
-	        parent.innerHTML = "<span class=\"error\">" + title + "</span>";
-	        parent.style.cursor = "pointer";
-	        parent.childNodes[0].style.cursor = "pointer";
-	        parent.addEventListener("click", function(e){alert(title + ":\n\n" + message);}, false);
+	        var parent = e.parentNode;
+            var id = parent.getAttribute('id');
+            countState[id] = 2;
+            countColumn[id] = title + ":::" + message;
+            if (getRowCount() == locationCount)
+            {
+                showAllCount();
+            }
 	   	}
    	}
    	function errorfn(r, ignore, ServerID) 
     {
-	    var element = document.querySelectorAll("#resultServer" + ServerID)[0];
+	    var element = document.querySelectorAll("#resultUpdated" + ServerID)[0];
 	    if (r && r.length > 0) {
-	      linkToError("ajax error", r.toString())(element.firstChild);}
+            linkToError("ajax error", r.toString())(element.firstChild);}
 	    else if (!element.marked) {
-	      element.innerHTML = "<span class=\"error\">ajax error: no details.</span>";}
+            // console.log('called2');
+            // countState["resultUpdated" + ServerID] = 3;
+            // countColumn["resultUpdated" + ServerID] = "<span class=\"error\">ajax error: no details.</span>";
+            // if (getRowCount() == locationCount)
+            // {
+            //     showAllCount();
+            // }
+            // element.innerHTML = "<span class=\"error\">ajax error: no details.</span>";
+        }
     }
 	function undef(obj, /*optional*/ alternative) {
 		var altform = !(typeof(alternative) == "undefined")
