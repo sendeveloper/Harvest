@@ -56,6 +56,10 @@
 			'&ExecBy=TableDistribution_z2t_Accounts_Subscriptions_One.asp' + 
 			'&Now=' + escape(Date());
 		//alert(url);
+		var eleID = 'resultServer'+loopStep;
+        document.getElementById(eleID).innerHTML = locationServer[loopStep];
+        eleID = 'resultDatabase'+loopStep;
+        document.getElementById(eleID).innerHTML = locationDatabase[loopStep];
 			
         http.open('GET', url, true);
         http.onreadystatechange = getUpdateResponse;
@@ -69,10 +73,10 @@
 			if (http.status == 200) 
 				{
 				var r = http.responseXML;
-				var eleID = 'resultServer'+loopStep.toString();
-				document.getElementById(eleID).innerHTML = r.getElementsByTagName('response_server_name')[0].firstChild.nodeValue;
-				var eleID = 'resultDatabase'+loopStep.toString();
-				document.getElementById(eleID).innerHTML = r.getElementsByTagName('response_database_name')[0].firstChild.nodeValue;
+				// var eleID = 'resultServer'+loopStep.toString();
+				// document.getElementById(eleID).innerHTML = r.getElementsByTagName('response_server_name')[0].firstChild.nodeValue;
+				// var eleID = 'resultDatabase'+loopStep.toString();
+				// document.getElementById(eleID).innerHTML = r.getElementsByTagName('response_database_name')[0].firstChild.nodeValue;
 				var eleID = 'resultUpdated'+loopStep.toString();
 				document.getElementById(eleID).innerHTML = r.getElementsByTagName('response_records_updated')[0].firstChild.nodeValue;
 				
