@@ -58,6 +58,11 @@
 				'&z2tID=' + z2tID +
 				'&ExecBy=TableDistribution_z2t_Accounts_Subscriptions_addons_One.asp' + 
 				'&Now=' + escape(Date());
+
+        var eleID = 'resultServer'+id.toString();
+        document.getElementById(eleID).innerHTML = locationServer[id];
+        eleID = 'resultDatabase'+id.toString();
+        document.getElementById(eleID).innerHTML = locationDatabase[id];
 		return url;
 	}			
 	function runUpdate() 
@@ -447,10 +452,10 @@
     // }
     function getUpdateResponse(ignore, r, id) 
 	{
-        var eleID = 'resultServer'+id.toString();
-		document.getElementById(eleID).innerHTML = r.getElementsByTagName('response_server_name')[0].firstChild.nodeValue;
-		var eleID = 'resultDatabase'+id.toString();
-		document.getElementById(eleID).innerHTML = r.getElementsByTagName('response_database_name')[0].firstChild.nodeValue;
+  //       var eleID = 'resultServer'+id.toString();
+		// document.getElementById(eleID).innerHTML = r.getElementsByTagName('response_server_name')[0].firstChild.nodeValue;
+		// eleID = 'resultDatabase'+id.toString();
+		// document.getElementById(eleID).innerHTML = r.getElementsByTagName('response_database_name')[0].firstChild.nodeValue;
         document.getElementById('resultUpdated' + id).innerHTML = r.getElementsByTagName('response_records_updated')[0].firstChild.nodeValue;
         // countState['resultUpdated' + id] = 1;
         // countColumn['resultUpdated' + id] = r.getElementsByTagName('response_records_updated')[0].firstChild.nodeValue;
