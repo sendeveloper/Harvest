@@ -37,12 +37,12 @@
 		<%For i = 0 to LocationCount
 			Response.write "'" & LocationDatabase(i) & "', "
 		Next%>];
-	var updateFlag = 0;
-	var totalInserted = 0;
-	var totalUpdated = 0;
-    var countColumn = {};
-    var countState = {};
-    var displayedContent = false;
+	// var updateFlag = 0;
+	// var totalInserted = 0;
+	// var totalUpdated = 0;
+    // var countColumn = {};
+    // var countState = {};
+    // var displayedContent = false;
 		
     function formLoad()
 	{
@@ -414,60 +414,66 @@
         successFn15 = http.timer;
         http[15].get();        
 	}
-    function getRowCount() {
-        var count = 0;
-        for(var id in countColumn){
-            count++;
-        }
-        return count;
-    }
-    function showAllCount()
-    {
-        if (displayedContent) return;
-        for(var id in countColumn){
-            var value = countColumn[id];
-            var eleID = id.toString();
-            if (countState[id] == 1)
-                document.getElementById(eleID).innerHTML = value;
-            else if (countState[id] == 2)
-            {
-                var element = document.querySelectorAll("#" + id)[0];
-                var contents = countColumn[id].split(":::");
-                element.innerHTML = "<span class=\"error\">" + contents[0] + "</span>";
-                element.style.cursor = "pointer";
-                element.childNodes[0].style.cursor = "pointer";
-                element.addEventListener("click", function(e){alert(contents[0] + ":\n\n" + contents[1]);}, false);
-            }
-            else if (countState[id] == 3){
-                var element = document.querySelectorAll("#" + id)[0];
-                element.innerHTML = countColumn[id];
-            }
-        }
-        displayedContent = true;
-    }
+    // function getRowCount() {
+    //     var count = 0;
+    //     for(var id in countColumn){
+    //         count++;
+    //     }
+    //     return count;
+    // }
+    // function showAllCount()
+    // {
+    //     if (displayedContent) return;
+    //     for(var id in countColumn){
+    //         var value = countColumn[id];
+    //         var eleID = id.toString();
+    //         if (countState[id] == 1)
+    //             document.getElementById(eleID).innerHTML = value;
+    //         else if (countState[id] == 2)
+    //         {
+    //             var element = document.querySelectorAll("#" + id)[0];
+    //             var contents = countColumn[id].split(":::");
+    //             element.innerHTML = "<span class=\"error\">" + contents[0] + "</span>";
+    //             element.style.cursor = "pointer";
+    //             element.childNodes[0].style.cursor = "pointer";
+    //             element.addEventListener("click", function(e){alert(contents[0] + ":\n\n" + contents[1]);}, false);
+    //         }
+    //         else if (countState[id] == 3){
+    //             var element = document.querySelectorAll("#" + id)[0];
+    //             element.innerHTML = countColumn[id];
+    //         }
+    //     }
+    //     displayedContent = true;
+    // }
     function getUpdateResponse(ignore, r, id) 
 	{
         var eleID = 'resultServer'+id.toString();
 		document.getElementById(eleID).innerHTML = r.getElementsByTagName('response_server_name')[0].firstChild.nodeValue;
 		var eleID = 'resultDatabase'+id.toString();
 		document.getElementById(eleID).innerHTML = r.getElementsByTagName('response_database_name')[0].firstChild.nodeValue;
-        countState['resultUpdated' + id] = 1;
-        countColumn['resultUpdated' + id] = r.getElementsByTagName('response_records_updated')[0].firstChild.nodeValue;
-        if (getRowCount() == locationCount)
-        {
-            showAllCount();
-        }
+        document.getElementById('resultUpdated' + id).innerHTML = r.getElementsByTagName('response_records_updated')[0].firstChild.nodeValue;
+        // countState['resultUpdated' + id] = 1;
+        // countColumn['resultUpdated' + id] = r.getElementsByTagName('response_records_updated')[0].firstChild.nodeValue;
+        // if (getRowCount() == locationCount)
+        // {
+        //     showAllCount();
+        // }
 	}
 	function linkToError(title, message) {
 		return function showError(e) {
 	        var parent = e.parentNode;
             var id = parent.getAttribute('id');
-            countState[id] = 2;
-            countColumn[id] = title + ":::" + message;
-            if (getRowCount() == locationCount)
-            {
-                showAllCount();
-            }
+            var element = document.querySelectorAll("#" + id)[0];
+            element.innerHTML = "<span class=\"error\">" + title + "</span>";
+            element.style.cursor = "pointer";
+            element.childNodes[0].style.cursor = "pointer";
+            element.addEventListener("click", function(e){alert(title + ":\n\n" + message);}, false);
+            // countState[id] = 2;
+            // countColumn[id] = title + ":::" + message;
+            // if (getRowCount() == locationCount)
+            // {
+            //     showAllCount();
+            // }
 	   	}
    	}
    	function errorfn(r, ignore, ServerID) 
@@ -476,13 +482,13 @@
 	    if (r && r.length > 0) {
             linkToError("ajax error", r.toString())(element.firstChild);}
 	    else if (!element.marked) {
-            countState["resultUpdated" + ServerID] = 3;
-            countColumn["resultUpdated" + ServerID] = "<span class=\"error\">ajax error: no details.</span>";
-            if (getRowCount() == locationCount)
-            {
-                showAllCount();
-            }
-            // element.innerHTML = "<span class=\"error\">ajax error: no details.</span>";
+            // countState["resultUpdated" + ServerID] = 3;
+            // countColumn["resultUpdated" + ServerID] = "<span class=\"error\">ajax error: no details.</span>";
+            // if (getRowCount() == locationCount)
+            // {
+            //     showAllCount();
+            // }
+            element.innerHTML = "<span class=\"error\">ajax error: no details.</span>";
         }
     }
 	function undef(obj, /*optional*/ alternative) {
