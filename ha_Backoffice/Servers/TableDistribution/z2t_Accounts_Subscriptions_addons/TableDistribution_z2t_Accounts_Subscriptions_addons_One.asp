@@ -43,6 +43,7 @@
     // var countColumn = {};
     // var countState = {};
     // var displayedContent = false;
+    var countColumn = {};
 		
     function formLoad()
 	{
@@ -419,13 +420,16 @@
         successFn15 = http.timer;
         http[15].get();        
 	}
-    // function getRowCount() {
-    //     var count = 0;
-    //     for(var id in countColumn){
-    //         count++;
-    //     }
-    //     return count;
-    // }
+    function checkClose() {
+        var count = 0;
+        for(var id in countColumn){
+            count++;
+        }
+        if (count == locationCount)
+        {
+            window.close();
+        }
+    }
     // function showAllCount()
     // {
     //     if (displayedContent) return;
@@ -457,6 +461,8 @@
 		// eleID = 'resultDatabase'+id.toString();
 		// document.getElementById(eleID).innerHTML = r.getElementsByTagName('response_database_name')[0].firstChild.nodeValue;
         document.getElementById('resultUpdated' + id).innerHTML = r.getElementsByTagName('response_records_updated')[0].firstChild.nodeValue;
+        countColumn[id] = 1;
+        checkClose();
         // countState['resultUpdated' + id] = 1;
         // countColumn['resultUpdated' + id] = r.getElementsByTagName('response_records_updated')[0].firstChild.nodeValue;
         // if (getRowCount() == locationCount)
@@ -473,6 +479,8 @@
             element.style.cursor = "pointer";
             element.childNodes[0].style.cursor = "pointer";
             element.addEventListener("click", function(e){alert(title + ":\n\n" + message);}, false);
+            countColumn[id] = 1;
+            checkClose();
             // countState[id] = 2;
             // countColumn[id] = title + ":::" + message;
             // if (getRowCount() == locationCount)
@@ -494,6 +502,8 @@
             //     showAllCount();
             // }
             element.innerHTML = "<span class=\"error\">ajax error: no details.</span>";
+            countColumn[ServerID] = 1;
+            checkClose();
         }
     }
 	function undef(obj, /*optional*/ alternative) {
